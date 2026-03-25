@@ -119,6 +119,16 @@
             .hide-mobile { display: none; }
             .logo { font-size: 6rem; letter-spacing: 15px; }
         }
+        .counter {
+            margin-top: 20px;
+            font-family: 'CyberFont', sans-serif;
+            font-size: 0.6rem;
+            color: rgba(0, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        #visits { color: #f0f; text-shadow: 0 0 5px #f0f; }
+
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -145,6 +155,7 @@
     </div>
 
     <footer>
+        <div class="counter">Access Log: <span id="visits">0000</span></div>
         <div class="copyright">&copy; 2023-2026 KurbanchikTeamsStudio<br>Все права защищены.</div>
         <div class="social-links">
             <!-- Теперь это не ссылка <a>, а блок <div>, поэтому браузер молчит -->
@@ -217,6 +228,19 @@
         });
 
         document.addEventListener('dragstart', (e) => e.preventDefault());
+
+    // Функция, которая подставит число из базы на страницу
+        function cb(response) {
+        // Делаем формат 0001 вместо просто 1 для киберпанк-вайба
+            const visitsElement = document.getElementById('visits');
+            if (visitsElement) {
+                visitsElement.innerText = response.value.toString().padStart(4, '0');
+        }
+    }
+</script>
+<!-- Этот скрипт делает запрос к базе и вызывает функцию cb выше -->
+<script async src="https://api.countapi.xyz"></script>
+
         
     </script>
 </body>

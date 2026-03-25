@@ -147,8 +147,8 @@
     <footer>
         <div class="copyright">&copy; 2023-2026 KurbanchikTeamsStudio<br>Все права защищены.</div>
         <div class="social-links">
-            <a href="https://telegram.me/kurbanchikteamsstudio" target="_blank" class="social-link">Telegram</a>
-            <a href="mailto:kurbanchikteams@mail.ru" class="social-link mail">Email</a>    
+            <a href="https://telegram.me/kurbanchikteamsstudio" target="_blank" class="social-link">Telegram</a> 
+            <a href="javascript:void(0)" onclick="copyEmail()" class="social-link mail">Email</a>
         </div>
     </footer>
 
@@ -198,6 +198,12 @@
             el.addEventListener('mouseleave', () => glow.classList.remove('active'));
         });
 
+        function copyEmail() {
+            const email = "kurbanchikteams@mail.ru";
+            navigator.clipboard.writeText(email);
+            alert("Почта скопирована в буфер: " + email);
+        }
+
         // 3. МУЗЫКА
         const players = document.querySelectorAll('audio');
         players.forEach(player => {
@@ -210,6 +216,7 @@
         });
 
         document.addEventListener('dragstart', (e) => e.preventDefault());
+        
     </script>
 </body>
 </html>

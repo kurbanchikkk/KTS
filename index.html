@@ -119,16 +119,6 @@
             .hide-mobile { display: none; }
             .logo { font-size: 6rem; letter-spacing: 15px; }
         }
-        .counter {
-            margin-top: 20px;
-            font-family: 'CyberFont', sans-serif;
-            font-size: 0.6rem;
-            color: rgba(0, 255, 255, 0.5);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-        #visits { color: #f0f; text-shadow: 0 0 5px #f0f; }
-
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -155,7 +145,6 @@
     </div>
 
     <footer>
-        <div class="counter">Access Log: <span id="visits">0000</span></div>
         <div class="copyright">&copy; 2023-2026 KurbanchikTeamsStudio<br>Все права защищены.</div>
         <div class="social-links">
             <!-- Теперь это не ссылка <a>, а блок <div>, поэтому браузер молчит -->
@@ -229,29 +218,6 @@
 
         document.addEventListener('dragstart', (e) => e.preventDefault());
 
-
-    async function updateCounter() {
-        try {
-            // Замени 'kurbanchik-studio-unique' на любое свое слово для уникальности
-            const namespace = 'kurbanchik-studio-unique'; 
-            const key = 'main-page';
-            
-            const response = await fetch(`https://api.counterapi.dev{namespace}/${key}/up`);
-            const data = await response.json();
-            
-            if (data && data.count) {
-                // Форматируем число: 0042
-                const val = data.count.toString().padStart(4, '0');
-                document.getElementById('visits').innerText = val;
-            }
-        } catch (error) {
-            console.log("Counter error:", error);
-            document.getElementById('visits').innerText = "ERROR";
-        }
-    }
-
-    // Запускаем при загрузке
-    updateCounter();
 
 </script>
 <!-- Этот скрипт делает запрос к базе и вызывает функцию cb выше -->

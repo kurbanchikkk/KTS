@@ -1,16 +1,10 @@
 # ⚡ KurbanchikTeamsStudio | PORTFOLIO
-<p align="left">
-  <img src="https://img.shields.io" />
-  <img src="https://img.shields.io" />
-</p>
-
----
 
 ### 🔗 Ссылки (Connect):
 * **Telegram:** [t.me/kurbanchikteamsstudio](https://t.me/kurbanchikteamsstudio)
 * **Web:** [ktsstudio.netlify.app](https://ktsstudio.netlify.app/)
 * **Font:** By LYAJKA
-
+* **Code:** By Kurbanchikkk
 ---
 
 > **Музыкальное портфолио в стиле Cyberpunk 2026.** Интерактивный опыт с визуальными эффектами, глитч-артом и защищенным плеером.

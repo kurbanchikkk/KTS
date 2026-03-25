@@ -3,155 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KurbanchikTeamsStudio | NEON PRO</title>
-    
-    <!-- Подключаем футуристичный шрифт Orbitron -->
-    <link href="https://fonts.googleapis.com" rel="stylesheet">
-
+    <title>KurbanchikTeamsStudio | CYBER NEON</title>
     <style>
-        /* Общие настройки страницы */
+        /* 1. ПОДКЛЮЧАЕМ КИБЕРПАНК-ШРИФТ */
+        @font-face {
+            font-family: 'CyberFont';
+            src: url('Cyberpunk_RUS_BY_LYAJKA.ttf');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
             background: #050505;
+            /* Наша фирменная сетка на фоне */
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
             color: #fff;
-            font-family: 'Orbitron', sans-serif; /* Шрифт будущего по всему сайту */
             margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding: 80px 20px;
+            padding: 50px 20px;
             overflow-x: hidden;
-            /* 3D Сетка на фоне */
-            background-image: 
-                linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
-            background-size: 60px 60px;
+            user-select: none; /* Запрет выделения всего сайта */
         }
 
         /* Неоновые полоски по бокам */
         body::before, body::after {
             content: "";
             position: fixed;
-            top: 0;
-            width: 5px;
-            height: 100%;
-            z-index: 10;
+            top: 0; width: 5px; height: 100%; z-index: 10;
         }
-        body::before { left: 0; background: #0ff; box-shadow: 0 0 25px #0ff, 0 0 50px #0ff; }
-        body::after { right: 0; background: #f0f; box-shadow: 0 0 25px #f0f, 0 0 50px #f0f; }
+        body::before { left: 0; background: #0ff; box-shadow: 0 0 20px #0ff, 0 0 40px #0ff; }
+        body::after { right: 0; background: #f0f; box-shadow: 0 0 20px #f0f, 0 0 40px #f0f; }
 
-        /* Контейнер логотипа */
+        /* ГЛАВНЫЙ ЗАГОЛОВОК С МАКСИМАЛЬНЫМ НЕОНОМ */
         .logo {
-            font-size: 4.5rem;
-            font-weight: 900;
-            letter-spacing: 4px;
-            margin-bottom: 70px;
+            font-family: 'CyberFont', sans-serif;
+            /* Авто-размер, чтобы шрифт не ломал сайт */
+            font-size: clamp(1.2rem, 6vw, 3rem); 
+            text-transform: uppercase;
+            letter-spacing: -1px;
             text-align: center;
-            cursor: default;
+            margin-bottom: 60px;
+            line-height: 1.1;
         }
 
-        /* КТS — Мощный голубой неон (ВЫДЕЛЯЕМЫЙ) */
-        .kts {
-            color: #fff;
-            text-shadow: 
-                0 0 10px #0ff,
-                0 0 20px #0ff,
-                0 0 40px #0ff,
-                0 0 80px #0ff;
-            user-select: all; 
-            animation: cyan-pulse 2s infinite alternate;
-        }
-
-        /* Остальные буквы — Мощный фиолетовый неон (НЕВЫДЕЛЯЕМЫЙ) */
+        /* Обычные буквы переливаются */
         .extra {
             color: #fff;
-            text-shadow: 
-                0 0 10px #f0f,
-                0 0 20px #f0f,
-                0 0 40px #f0f,
-                0 0 80px #f0f;
-            user-select: none; 
-            pointer-events: none;
-            animation: purple-pulse 2s infinite alternate-reverse;
+            animation: neon-flow 4s ease-in-out infinite alternate;
         }
 
-        /* Анимации свечения */
-        @keyframes cyan-pulse {
-            from { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff; filter: brightness(1); }
-            to { text-shadow: 0 0 20px #0ff, 0 0 45px #0ff, 0 0 90px #0ff; filter: brightness(1.2); }
+        /* КТS — ЯРКИЙ АКЦЕНТ */
+        .highlight {
+            color: #fff;
+            animation: kts-ultra-glow 2s infinite alternate;
+            user-select: all; /* Можно выделить только KTS */
         }
 
-        @keyframes purple-pulse {
-            from { text-shadow: 0 0 10px #f0f, 0 0 20px #f0f; filter: brightness(1); }
-            to { text-shadow: 0 0 20px #f0f, 0 0 45px #f0f, 0 0 90px #f0f; filter: brightness(1.2); }
+        @keyframes neon-flow {
+            0% { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff; }
+            100% { text-shadow: 0 0 10px #f0f, 0 0 20px #f0f; }
         }
 
-        /* Стеклянный плеер */
+        @keyframes kts-ultra-glow {
+            0% { text-shadow: 0 0 15px #0ff, 0 0 30px #0ff, 0 0 60px #0ff; filter: brightness(1); }
+            100% { text-shadow: 0 0 20px #f0f, 0 0 40px #f0f, 0 0 80px #f0f; filter: brightness(1.6); }
+        }
+
+        /* Плеер */
         .playlist {
             width: 100%;
-            max-width: 650px;
+            max-width: 550px;
             background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(25px);
+            backdrop-filter: blur(20px);
             border: 1px solid rgba(0, 255, 255, 0.2);
-            border-radius: 25px;
-            padding: 40px;
-            box-shadow: 0 0 50px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,1);
         }
 
         .track {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 15px;
         }
-
-        .track:last-child { border: none; margin-bottom: 0; }
 
         .track-name {
-            display: block;
+            font-family: 'CyberFont', sans-serif;
             font-size: 0.9rem;
-            font-weight: 900;
-            text-transform: uppercase;
             color: #0ff;
             text-shadow: 0 0 8px #0ff;
-            margin-bottom: 15px;
-            letter-spacing: 3px;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
         }
 
-        /* Кастомизация стандартного плеера */
         audio {
             width: 100%;
-            height: 40px;
-            filter: invert(1) hue-rotate(180deg) brightness(1.6);
-            border-radius: 50px;
-        }
-
-        /* Адаптив для телефонов */
-        @media (max-width: 768px) {
-            .logo { font-size: 2.2rem; }
-            .playlist { padding: 20px; }
-            body { padding: 40px 10px; }
+            height: 35px;
+            filter: invert(1) hue-rotate(180deg) brightness(1.4);
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;"> <!-- Полный запрет правой кнопки мыши -->
 
     <div class="logo">
-        <span class="kts">K</span><span class="extra">urbanchik</span><span class="kts">T</span><span class="extra">eams</span><span class="kts">S</span><span class="extra">tudio</span>
+        <span class="highlight">K</span><span class="extra">urbanchik</span><span class="highlight">T</span><span class="extra">eams</span><span class="highlight">S</span><span class="extra">tudio</span>
     </div>
 
     <div class="playlist">
-        <!-- Твой список треков -->
-        <div class="track"><span class="track-name">001</span><audio controls src="music/001.mp3"></audio></div>
-        <div class="track"><span class="track-name">A True CyberPunk</span><audio controls src="music/A True CyberPunk.mp3"></audio></div>
-        <div class="track"><span class="track-name">Fly</span><audio controls src="music/Fly.mp3"></audio></div>
-        <div class="track"><span class="track-name">ikavka</span><audio controls src="music/ikavka.mp3"></audio></div>
-        <div class="track"><span class="track-name">MASK</span><audio controls src="music/MASK.mp3"></audio></div>
-        <div class="track"><span class="track-name">SH-1 (Passed)</span><audio controls src="music/SH-1(Passed).mp3"></audio></div>
-        <div class="track"><span class="track-name">SH-OP</span><audio controls src="music/SH-OP.mp3"></audio></div>
-        <div class="track"><span class="track-name">TREMBLES</span><audio controls src="music/TREMBLES.mp3"></audio></div>
-        <div class="track"><span class="track-name">Underground</span><audio controls src="music/Underground.mp3"></audio></div>
-        <div class="track"><span class="track-name">ZENITH</span><audio controls src="music/ZENITH.mp3"></audio></div>
+        <!-- Твои треки БЕЗ кнопки скачивания -->
+        <div class="track"><span class="track-name">001</span><audio controls controlsList="nodownload" src="music/001.mp3"></audio></div>
+        <div class="track"><span class="track-name">A True CyberPunk</span><audio controls controlsList="nodownload" src="music/A True CyberPunk.mp3"></audio></div>
+        <div class="track"><span class="track-name">Fly</span><audio controls controlsList="nodownload" src="music/Fly.mp3"></audio></div>
+        <div class="track"><span class="track-name">ikavka</span><audio controls controlsList="nodownload" src="music/ikavka.mp3"></audio></div>
+        <div class="track"><span class="track-name">MASK</span><audio controls controlsList="nodownload" src="music/MASK.mp3"></audio></div>
+        <div class="track"><span class="track-name">SH-1 (Passed)</span><audio controls controlsList="nodownload" src="music/SH-1(Passed).mp3"></audio></div>
+        <div class="track"><span class="track-name">SH-OP</span><audio controls controlsList="nodownload" src="music/SH-OP.mp3"></audio></div>
+        <div class="track"><span class="track-name">TREMBLES</span><audio controls controlsList="nodownload" src="music/TREMBLES.mp3"></audio></div>
+        <div class="track"><span class="track-name">Underground</span><audio controls controlsList="nodownload" src="music/Underground.mp3"></audio></div>
+        <div class="track"><span class="track-name">ZENITH</span><audio controls controlsList="nodownload" src="music/ZENITH.mp3"></audio></div>
     </div>
 
+    <script>
+        // Защита от перетаскивания
+        document.addEventListener('dragstart', function(e) { e.preventDefault(); });
+    </script>
 </body>
 </html>

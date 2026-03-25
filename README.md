@@ -15,20 +15,26 @@
 ## 🚀 Особенности проекта (Features)
 
 *   **Cyber-Rain Engine**: Динамический цифровой дождь на Canvas, ускоряющийся под бит.
-*     Dynamic digital rain on Canvas, accelerating to the beat.
+
+    Dynamic digital rain on Canvas, accelerating to the beat.
 *   **Neon Grid Sync**: Фоновая сетка синхронизирована с воспроизведением музыки.
-*     The background grid is synchronized with the music playback
+
+    The background grid is synchronized with the music playback
 *   **Interactive Glow**: Кастомный курсор-фонарик с RGB-откликом на элементы интерфейса.
-*     Custom flashlight cursor with RGB response to interface elements.
+
+    Custom flashlight cursor with RGB response to interface elements.
 *   **Anti-Leak System**: Защита треков от прямого скачивания и блокировка контекстного меню.
-*     Protection of tracks from direct downloading and blocking of the context menu.
+
+    Protection of tracks from direct downloading and blocking of the context menu.
 *   **Adaptive**: Специальная верстка для мобильных устройств.
-*     Special layout for mobile devices.
+
+    Special layout for mobile devices.
 
 ## 🛠 Стек технологий (Tech Stack)
 
 *   **HTML5** (Семантика и структура)
-*     Semantics and structure
+
+     Semantics and structure
 *   **CSS3** (Neon Glow, Animations, Flexbox)
 *   **JavaScript** (Canvas API, DOM Manipulation, Clipboard API)
 

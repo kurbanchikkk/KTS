@@ -6,7 +6,7 @@
 * **Font:** By LYAJKA
 * **Code:** By Kurbanchikkk
 ---
-
+https://github.com/kurbanchikkk/ktss.git
 > **Музыкальное портфолио в стиле Cyberpunk 2026.** Интерактивный опыт с визуальными эффектами, глитч-артом и защищенным плеером.
 
 > **A musical portfolio in the style of Cyberpunk 2026.** An interactive experience with visual effects, glitch art, and a secure player.
